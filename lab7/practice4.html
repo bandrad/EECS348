@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <tt>
+      <h3> Practice 04: Multiplaction Table</h3>
+      
+      <form method="TABLE">
+      
+      Enter a number: 
+      <input type="text" name = "n">
+      <input type="Submit" value = "get table!">
+       
+      </form>
+        
+    </tt>
+  </body>
+</html>
+    
+<?php
+
+if($_TABLE){
+	$n = $_TABLE["n"];
+	
+	    for($i=1; $i <= $n; $i++)
+    {
+        print $i." ";
+    }
+    print"\n";
+
+	for($i = 1; $i <= $n; $i++)
+		{
+		     
+			for($j=1; $j <= $n; $j++)
+				{
+				   
+					print $i * $j." ";
+				}
+				print "\n";
+		}
+}
+
+?>
