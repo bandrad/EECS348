@@ -2,21 +2,22 @@ function format()
 
 {
  
-var pr = document.getElementById(“textR”).value;
-var pg = document.getElementById(“textG”).value;
-var pb = document.getElementById(“textB”).value;
+var text = document.getElementById("text");
 
-document.getElementById(“text”).style.color = "rgb("pr","pg","pb")";
+var bcR = document.getElementById("bcR").value;
+var bcG = document.getElementById("bcG").value;
+var bcB = document.getElementById("bcB").value;
 
+text.style.borderColor = 'rgb(${bcR},${bcG}, ${bcB})';
 
-var width = document.getElementById(“width”).value;
-document.getElementById(“text”).style.borderWidth = "width";
+var width = document.getElementById("width").value;
+text.style.borderWidth = width;
   
 
-var br = document.getElementById(“borderR”).value;
-var bg = document.getElementById(“borderG”).value;
-var bb = document.getElementById(“borderB”).value;
+var br = document.getElementById("bgR").value;
+var bg = document.getElementById("bgG").value;
+var bb = document.getElementById("bgB").value;
   
-document.getElementById(“text”).style.borderColor = "rgb("borderR","borderG","borderB")";
+text.style.backgroundColor = 'rgb(${br},${bg}, ${bb})';
   
 }
