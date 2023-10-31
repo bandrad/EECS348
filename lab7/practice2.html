@@ -2,10 +2,13 @@
   <head>
     <style>
       body {background-color: gainsboro;}
+	
+      #text {
+	border-style:solid;
+	border-width: 2px;
+	}
     </style>
     
-    <script src="practice2.js" type="text/javascript"></script>
-
    </head>
     <body>
       
@@ -13,27 +16,31 @@
         <h3 style = "color: darkseagreen;"> Practice 02: CSS Font Control </h3>
         
         
-        <p style = "color: black; border-style: solid; border-width: 0px; id = text"> 
-          Risograph printing is a printing technique with a similar process to screen<br>    			printing (the practice of printing with a
-			mesh screen). It's known for its vivid<br> colours and texture,
-          which can be impossible to duplicate with an ordinary printer.<br> </p>
+        <div id="text">
+          Risograph printing is a printing technique with a similar process to screen<br> 
+	  printing (the practice of printing with a mesh screen). It's known for its vivid<br> 
+	  colours and texture, which can be impossible to duplicate with an ordinary printer.<br>
+	</div>
           
-          change text color: 
-          <pre>   Red <input type=“number” id=“textR” value=> 
- Green <input type=“number” id=“textG” value=>
-  Blue <input type=“number” id=“textB” value=> </pre>
 
-          add in a border:
-            <pre> width <input type=“number” id=“width” value=> </pre>
+	    <script src="practice2.js" type="text/javascript"></script>
+
+          change border color: 
+          <pre>   Red <input type="text" id="bcR" value=""> 
+ Green <input type="text" id="bcG" value="">
+  Blue <input type="text" id="bcB" value=""> </pre>
+
+          change border size:
+            <pre> width <input type"text" id="width" value=""> </pre>
               
-          change border color:
-               <pre>   Red <input type=“number” id=“textR” value=> 
- Green <input type=“number” id=“textG” value=>
-  Blue <input type=“number” id=“textB” value=> </pre>
+          change background color:
+               <pre>   Red <input type="text" id="bgR" value=""> 
+ Green <input type="text" id="bgG" value="">
+  Blue <input type="text" id="bgB" value=""> </pre>
                  
-  <button  type="button" onclick ="format()" >Submit </button>
+  <button onclick ="format()" > Submit </button>
 
       </tt>
-  	</body>
+  </body>
   
 </html>
