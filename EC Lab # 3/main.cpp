@@ -27,6 +27,14 @@ int main()
 	// transfer 300 from savings to current 
 	current = current + savings;
 	
+	savings.Account::displayAccount();
+	current.Account::displayAccount();
+
+	return 0;
+
+}//end main
+
+
 
 
 
