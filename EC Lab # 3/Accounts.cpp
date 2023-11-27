@@ -9,7 +9,7 @@
 #include <string>
 #include <stdexcept>
 
-using namespace std;
+
 
 Account::Account()
 {
@@ -73,9 +73,7 @@ double Account::getTransferAmount()
 
 void Account::displayAccount()
 {
-	cout << "Account Number: " << aNumber << endl;
-	cout << "Account Holder: " << aHolder << endl;
-	cout << "Current Balance: " << balance << endl;
+	cout << this;
 }// end displayAccount
 
 
@@ -115,21 +113,16 @@ inline Account operator + (Account const& a, Account const& b)
 
 }// end operator +
 
-inline Account operator + (Account const& a, Account const& b)
+ostream& operator <<(ostream& os, const Account& a)
 {
-	Account result = a;
-	Account c = b;
-	double Transferring = c.getTransferAmount();
+	Account temp = a;
 
-	result.deposit(Transferring);
-	c.withdraw(Transferring);
-	c.setTransfer(0);
+	cout << "Account Details for Accoun (ID: " << temp.getAccountNumber() << ":" << endl;
+	cout << "Holder: " << temp.getAccountHolder() << endl;
+	cout << "Balance: $" << temp.getBalance() << endl;
 
-	return result;
-
-}// end operator +
-
-
+	return os;
+}// end operator <<
 
 
 Savings::Savings()
@@ -175,6 +168,21 @@ void Savings::withdraw(double ammount)
 			"minimum balance requirement of $"<< minimumBalance << endl;
 	}
 }// end withdraw
+
+
+
+ostream& operator <<(ostream& os, const Savings& a)
+{
+	Savings temp = a;
+
+	cout << "Account Details for Accoun (ID: " << temp.getAccountNumber() << ":" << endl;
+	cout << "Holder: " << temp.getAccountHolder() << endl;
+	cout << "Balance: $" << temp.getBalance() << endl;
+	cout << "Interest Rate: " << temp.getInterest() << "%" << endl;
+
+	return os;
+
+}
 
 Current::Current()
 {
@@ -222,3 +230,28 @@ void Current::withdraw(double amount)
 
 }// end withdraw
 
+ostream& operator <<(ostream& os, const Current& a)
+{
+	Current temp = a;
+
+	cout << "Account Details for Accoun (ID: " << temp.getAccountNumber() << ":" << endl;
+	cout << "Holder: " << temp.getAccountHolder() << endl;
+	cout << "Balance: " << temp.getBalance() << endl;
+	cout << "Overdraft Limit: $" << temp.getOverdraft() << endl;
+
+	return os;
+}
+
+inline Current operator + (Current const& a, Account const& b)
+{
+	Current result = a;
+	Account c = b;
+	double Transferring = c.getTransferAmount();
+
+	result.deposit(Transferring);
+	c.withdraw(Transferring);
+	c.setTransfer(0);
+
+	return result;
+
+}// end operator +
