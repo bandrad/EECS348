@@ -31,13 +31,13 @@ public:
 	void setAccountHolder(string name);
 	void setTransfer(double amount);
 
+	
+
 
 	double getBalance(); //gets balance
 	double getTransferAmount(); //gets transfer amount
 	string getAccountNumber(); //gets account number
 	string getAccountHolder(); // get account holder name
-
-
 };
 
 class Savings : public Account
@@ -74,4 +74,3 @@ public:
 };
 
 #endif 
-
